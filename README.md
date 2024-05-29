@@ -19,6 +19,15 @@ next-react-notes
 // 4. /note/edit/xxxx ，具体的编辑路由
 ```
 
+```shell
+# markdown 转换为 HTML
+npm i marked
+
+# 清理 HTML，比如删除一些不良的写法，转义特殊字符等
+npm i sanitize-html
+
+```
+
 ```
 redis 版本过低时，调用 redis.hset 可能会报错：Error: ERR wrong number of arguments for 'hset' command
 
