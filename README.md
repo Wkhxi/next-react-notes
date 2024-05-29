@@ -14,9 +14,9 @@ next-react-notes
 
 
 // 1. 首页 /
-// 2. /note/xxxx ,渲染具体笔记内容
-// 3. /note/edit ,编辑路由
-// 4. /note/edit/xxxx ，具体的编辑路由
+// 2. /note/xxxx , 预览路由 渲染具体笔记内容
+// 3. /note/edit , 新增路由
+// 4. /note/edit/xxxx ，编辑路由
 ```
 
 ```shell
@@ -53,4 +53,7 @@ React Server Component
 
 5. 使用 Suspense 包裹高延性的组件
 
+6. 所有组件都是服务器组件，除非它使用了 'use client' 指令，或者被导入到 'use client' 模块中。此时变成为客户端组件。就意味着它的代码要被打包到客户端 bundle 中。
+
+7。 使用客户端组件时项，不要使用 async/await
 ```
