@@ -19,7 +19,7 @@ export default async function Sidebar() {
               alt=""
               role="presentation"
             />
-            <strong>React Notes</strong>
+            <strong>Memo Notes</strong>
           </section>
         </Link>
         <section className="sidebar-menu" role="menubar">
