@@ -42,4 +42,6 @@ React Server Component
 
 4. 尽可能将客户端组件在组件树中下移， 尽可能缩减客户端组件的范围。
 
+5. 使用 Suspense 包裹高延性的组件
+
 ```

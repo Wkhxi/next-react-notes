@@ -1,7 +1,11 @@
-import dayjs from "dayjs"; // 引入 day.js 的 SidebarNoteList 组件使用的是服务端渲染，这意味着 day.js 的代码并不会被打包到客户端的 bundle 中。
 import SidebarNoteItem from "@/components/SidebarNoteItem";
+import { getAllNotes } from "@/lib/redis";
 
-export default async function NoteList({ notes }) {
+export default async function NoteList() {
+  const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+  await sleep(2000); // 等2s看下Suspense效果
+  const notes = await getAllNotes();
+
   const arr = Object.entries(notes);
 
   if (arr.length === 0) {

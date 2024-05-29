@@ -1,4 +1,4 @@
-import dayjs from "dayjs"; // 在服务端组件中导入并使用 dayjs
+import dayjs from "dayjs"; // 引入 day.js 的  组件使用的是服务端渲染，这意味着 day.js 的代码并不会被打包到客户端的 bundle 中。
 import SidebarNoteItemContent from "@/components/SidebarNoteItemContent"; // 服务端组件可以导入客户端组件
 
 /**
