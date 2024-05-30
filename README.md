@@ -26,6 +26,9 @@ npm i marked
 # 清理 HTML，比如删除一些不良的写法，转义特殊字符等
 npm i sanitize-html
 
+# zod 用于数据校验
+npm i zod
+
 ```
 
 ```
