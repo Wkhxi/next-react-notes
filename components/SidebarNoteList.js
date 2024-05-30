@@ -1,27 +1,27 @@
+import SidebarNoteListFilter from "@/components/SidebarNoteListFilter";
 import SidebarNoteItem from "@/components/SidebarNoteItem";
 import { getAllNotes } from "@/lib/redis";
+import { sleep } from "@/lib/utils";
 
 export default async function NoteList() {
-  const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
-  await sleep(1000); // 等2s看下Suspense效果
+  await sleep(2000);
   const notes = await getAllNotes();
 
-  const arr = Object.entries(notes);
-
-  if (arr.length === 0) {
+  if (Object.entries(notes).length == 0) {
     return <div className="notes-empty">{"No notes created yet!"}</div>;
   }
 
   return (
-    <ul className="notes-list">
-      {arr.map(([noteId, note]) => {
-        const { title, updateTime } = JSON.parse(note);
+    <SidebarNoteListFilter>
+      {Object.entries(notes).map(([noteId, note]) => {
         return (
-          <li key={noteId}>
-            <SidebarNoteItem noteId={noteId} note={JSON.parse(note)} />
-          </li>
+          <SidebarNoteItem
+            key={noteId}
+            noteId={noteId}
+            note={JSON.parse(note)}
+          />
         );
       })}
-    </ul>
+    </SidebarNoteListFilter>
   );
 }

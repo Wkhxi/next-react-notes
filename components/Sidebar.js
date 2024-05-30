@@ -4,6 +4,7 @@ import Image from "next/image";
 import SidebarNoteList from "@/components/SidebarNoteList";
 import EditButton from "@/components/EditButton";
 import NoteListSkeleton from "./NoteListSkeleton";
+import SidebarSearchField from "@/components/SidebarSearchField";
 
 export default async function Sidebar() {
   return (
@@ -23,6 +24,7 @@ export default async function Sidebar() {
           </section>
         </Link>
         <section className="sidebar-menu" role="menubar">
+          <SidebarSearchField />
           <EditButton noteId={null}>New</EditButton>
         </section>
         <nav>
