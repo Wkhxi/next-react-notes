@@ -40,6 +40,20 @@ npm i i18next i18next-resources-to-backend react-i18next
 
 i18next-resources-to-backend 帮助我们读取 json 文件资源，生成字典。
 
+i18n
+├─ locales
+│  ├─ en
+│  │  ├─ basic.json
+│  │  └─ footer.json
+│  └─ zh
+│     ├─ basic.json
+│     └─ footer.json
+└─ index.js
+
+// i18n client.js
+npm i react-cookie i18next-browser-languagedetector
+
+
 
 ```
 
