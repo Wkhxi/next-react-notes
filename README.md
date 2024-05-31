@@ -34,7 +34,7 @@ npm i zod
 ```
 国际化：
 
-react-i18next：
+1. react-i18next：定制化更高
 
 npm i i18next i18next-resources-to-backend react-i18next
 
@@ -53,7 +53,8 @@ i18n
 // i18n client.js
 npm i react-cookie i18next-browser-languagedetector
 
-
+2. next-intl 更简便
+https://next-intl-docs.vercel.app/docs/getting-started/app-router
 
 ```
 
