@@ -32,9 +32,22 @@ npm i zod
 ```
 
 ```
+国际化：
+
+react-i18next：
+
+npm i i18next i18next-resources-to-backend react-i18next
+
+i18next-resources-to-backend 帮助我们读取 json 文件资源，生成字典。
+
+
+```
+
+```
 redis 版本过低时，调用 redis.hset 可能会报错：Error: ERR wrong number of arguments for 'hset' command
 
 解决：
+  redis版本过低导致
   使用 docker 安装 latest 版本
   https://cloud.tencent.com/developer/article/1670205
 
