@@ -6,6 +6,7 @@ import EditButton from "@/components/EditButton";
 import NoteListSkeleton from "./NoteListSkeleton";
 import SidebarSearchField from "@/components/SidebarSearchField";
 import { useTranslation } from "@/app/i18n/index.js";
+import SidebarImport from "@/components/SidebarImport";
 
 export default async function Sidebar({ lng }) {
   const { t } = await useTranslation(lng);
@@ -37,6 +38,7 @@ export default async function Sidebar({ lng }) {
           {/* 数据要在 Suspense 包裹的组件中请求 */}
           <Suspense fallback={<NoteListSkeleton />}>
             <SidebarNoteList />
+            <SidebarImport />
           </Suspense>
         </nav>
       </section>

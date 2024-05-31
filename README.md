@@ -59,6 +59,17 @@ https://next-intl-docs.vercel.app/docs/getting-started/app-router
 ```
 
 ```
+文件上传：
+
+# 用于获取 MIME 类型信息
+npm i mime
+
+文件上传后写入到 public/uploads 文件下
+
+
+```
+
+```
 redis 版本过低时，调用 redis.hset 可能会报错：Error: ERR wrong number of arguments for 'hset' command
 
 解决：
