@@ -70,6 +70,48 @@ npm i mime
 ```
 
 ```
+支持 App Router 的 Authentication 解决方案：使用第三方网站认证用户身份，会得到一个token，这个token决定你的操作权限
+
+https://authjs.dev/reference/nextjs#environment-variable-inferrence
+https://next-auth.js.org/configuration/nextjs#in-app-router
+
+# next-auth
+npm install next-auth@beta
+
+需求：使用 github 快捷登录
+
+1. 在 GitHub 申请 OAuth 应用 https://github.com/settings/applications/new
+    1）本地开发，所以 Homepage URL 填写 http://localhost:3000
+    2）Authorization callback URL填写 http://localhost:3000/api/auth/callback/github，具体它的处理逻辑会由 next-auth 来实现
+    3）生成 GitHub Client ID 和 GitHub secrets
+
+2. 配置 GitHub Client ID 和 GitHub secrets  到 环境变量
+
+    1）项目根目录下建立一个 .env 文件
+    2）AUTH_SECRET 随机字符串，可以执行：openssl rand -base64 32 或者打开 generate-secret.vercel.app/32 获取一个随机值。
+
+
+3. 添加 api 路由：新建 /app/api/auth/[...nextauth]/route.js
+
+
+
+4. 服务端组件可以直接获取 session 信息 ： await auth()
+   客户端组件可以通过 <SessionProvider session={session} /> 包裹来传递  session 信息
+        <!-- 服务端组件中 -->
+        import { SessionProvider } from "next-auth/react"
+        <SessionProvider session={session}>
+          <ClientComponent />
+        </SessionProvider>
+
+        <!-- 客户端组件中 -->
+        import { useSession } from "next-auth/react"
+        const { data: session, status } = useSession()
+
+
+
+```
+
+```
 redis 版本过低时，调用 redis.hset 可能会报错：Error: ERR wrong number of arguments for 'hset' command
 
 解决：

@@ -48,7 +48,7 @@ export default function SidebarImport() {
   return (
     <div style={{ textAlign: "center" }}>
       {/* 使用 label 标签关联，隐藏 input 标签 */}
-      <label for="file" style={{ cursor: "pointer" }}>
+      <label htmlFor="file" style={{ cursor: "pointer" }}>
         Import .md File
       </label>
       <input
