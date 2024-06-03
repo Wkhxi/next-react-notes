@@ -1,7 +1,7 @@
 "use server";
 
 import { redirect } from "next/navigation";
-import { addNote, updateNote, delNote } from "@/lib/redis";
+import { addNote, updateNote, delNote } from "@/lib/strapi";
 import { revalidatePath } from "next/cache";
 import { z } from "zod";
 
@@ -39,7 +39,7 @@ export async function saveNote(prevState, formData) {
     revalidatePath("/", "layout");
     redirect(`/note/${noteId}`);
   } else {
-    await addNote(JSON.stringify(data));
+    const res = await addNote(JSON.stringify(data));
     revalidatePath("/", "layout");
     redirect(`/note/${res}`);
   }
