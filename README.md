@@ -112,6 +112,34 @@ npm install next-auth@beta
 ```
 
 ```
+Prisma
+
+1. npm install prisma --save-dev
+
+2. 运行： npx prisma init
+
+
+3. 新建 prisma文件夹 和 .env文件
+    1）prisma/schema.prisma --> 定义数据模型
+    2）.env --> 定义环境变量（如数据库地址）
+
+4. 执行 npx prisma db pull ，测试是否连接成功
+
+
+5. 定义数据模型，数据模型要与数据库保持一致
+    1）修改数据模型，然后运行 npx prisma migrate dev 同步到数据库
+            运行时随便起个名字
+    2）修改数据库，然后运行 npx prisma db pull 同步到数据模型
+            随后运行 prisma generate 来更新 PrismaClient
+
+6. npm install @prisma/client
+
+7. npx prisma studio
+
+
+```
+
+```
 redis 版本过低时，调用 redis.hset 可能会报错：Error: ERR wrong number of arguments for 'hset' command
 
 解决：
