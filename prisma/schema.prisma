@@ -21,5 +21,5 @@ model User {
   id       String @id @default(uuid())
   username String
   password String
-  note     Note[]
+  notes    Note[]
 }

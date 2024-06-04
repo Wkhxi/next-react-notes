@@ -201,7 +201,7 @@ hr {
 /* ---------------------------------------------------------------------------*/
 .main {
   display: flex;
-  height: 100vh;
+  height: calc(100vh - 120px);
   width: 100%;
   overflow: hidden;
 }
@@ -689,4 +689,20 @@ ul.notes-list {
     transform: scale(1);
     opacity: 1;
   }
+}
+
+.container {
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+.header {
+  height: 60px;
+  width: 100%;
+}
+
+.footer {
+  height: 60px;
+  width: 100%;
 }

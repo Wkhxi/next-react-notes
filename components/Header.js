@@ -29,7 +29,10 @@ function SignOut(props) {
 export default async function Header() {
   const session = await auth();
   return (
-    <header style={{ display: "flex", justifyContent: "flex-end" }}>
+    <header
+      className="header"
+      style={{ display: "flex", justifyContent: "flex-end" }}
+    >
       {session?.user ? (
         <span style={{ display: "flex", alignItems: "center" }}>
           {session?.user.name}

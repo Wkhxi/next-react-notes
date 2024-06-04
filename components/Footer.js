@@ -6,7 +6,7 @@ import { useTranslation } from "@/app/i18n/index.js";
 export const Footer = async ({ lng }) => {
   const { t } = await useTranslation(lng, "footer");
   return (
-    <footer style={{ margin: 20 }}>
+    <footer className="footer">
       <Trans i18nKey="languageSwitcher" t={t}>
         Switch from <strong>{{ lng }}</strong> to:{" "}
       </Trans>
