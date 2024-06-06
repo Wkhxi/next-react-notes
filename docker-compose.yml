@@ -19,9 +19,10 @@ services:
     image: redis
     ports:
       - "6379:6379"
-    command: redis-server
+    command: redis-server /etc/redis/redis.conf
     volumes:
-      - ./redis/data:/data # ./redis/data:/data表示将一个地址为 ./redis/data的 volume 挂载到 Redis 容器的 /data目录。
+      - ./redis/data:/data # ./redis/data:/data表示将一个地址为 ./redis/data的 volume 挂载到 Redis 容器的 /data目录
+      - ./redis:/etc/redis
 
   nextapp:
     build: .
