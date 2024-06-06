@@ -38,7 +38,7 @@ export async function saveNote(prevState, formData) {
     await updateNote(noteId, JSON.stringify(data));
     revalidatePath("/", "layout");
   } else {
-    await addNote(JSON.stringify(data));
+    const res = await addNote(JSON.stringify(data));
     revalidatePath("/", "layout");
   }
 
